@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Year Letter for Father</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="envelope" id="envelope">
+        <div class="letter">
+            <p><b>Dear Papa,</b></p>
+            <p>
+                Happy New Year!  
+                Thank you for your hard work, guidance,
+                and endless support.
+            </p>
+            <p>
+                You are my inspiration and strength.
+                May this year bring you health,
+                happiness, and peace.
+            </p>
+            <p><b>— Your Child</b></p>
+        </div>
+    </div>
+
+    <button onclick="openLetter()">OPEN</button>
+    <button onclick="closeLetter()">CLOSE</button>
+</div>
+
+<script>
+function openLetter() {
+    document.getElementById("envelope").classList.add("open");
+}
+
+function closeLetter() {
+    document.getElementById("envelope").classList.remove("open");
+}
+</script>
+
+</body>
+</html>
