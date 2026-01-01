@@ -2,48 +2,132 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy New Year Papa</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy New Year Dad</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #000428, #004e92);
+    background-size: 400% 400%;
+    animation: bgMove 8s ease infinite;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+@keyframes bgMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Envelope container */
+.envelope-container {
+    width: 80vw;
+    height: 80vh;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Envelope body */
+.envelope {
+    width: 100%;
+    height: 100%;
+    background: #c0392b;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Envelope flap */
+.flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background: #e74c3c;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    transform-origin: top;
+    transition: transform 1s ease;
+    z-index: 3;
+}
+
+/* Letter */
+.letter {
+    position: absolute;
+    bottom: -100%;
+    width: 90%;
+    height: 75%;
+    background: #fff;
+    left: 5%;
+    border-radius: 8px;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: bottom 1s ease;
+    z-index: 2;
+}
+
+.letter h1 {
+    color: #c0392b;
+    margin-bottom: 20px;
+}
+
+.letter p {
+    font-size: 22px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Open state */
+.envelope-container.open .flap {
+    transform: rotateX(180deg);
+}
+
+.envelope-container.open .letter {
+    bottom: 10%;
+}
+
+/* Glow effect */
+.envelope::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 40px rgba(255,255,255,0.4);
+    border-radius: 10px;
+}
+</style>
 </head>
+
 <body>
 
-<h1 class="title">🎆 Happy New Year Papa 🎆</h1>
+<div class="envelope-container" onclick="toggleEnvelope()">
+    <div class="envelope">
+        <div class="flap"></div>
 
-<div class="envelope" id="env">
-    <div class="flap"></div>
-
-    <div class="letter">
-        <h2>Dear Papa,</h2>
-
-        <p>
-            As we welcome this New Year, I want to thank you
-            for your constant support, sacrifices, and guidance.
-            Your hard work and values have shaped my life
-            and taught me to always move forward with confidence.
-        </p>
-
-        <p>
-            You are my strength and my biggest inspiration.
-            May this New Year bring you good health,
-            happiness, peace, and success.
-            I promise to work hard and always make you proud.
-        </p>
-
-        <p class="sign">— Your Child</p>
+        <div class="letter">
+            <h1>🎉 Happy New Year Papa 🎉</h1>
+            <p>
+                Dear Papa,<br><br>
+                Thank you for your love, guidance, and sacrifices.<br>
+                You are my strength and inspiration.<br><br>
+                May this New Year bring you good health,<br>
+                happiness, and peace.<br><br>
+                With love and respect ❤️
+            </p>
+        </div>
     </div>
 </div>
 
-<div class="buttons">
-    <button onclick="openEnv()">OPEN</button>
-    <button onclick="closeEnv()">CLOSE</button>
-</div>
-
 <script>
-function openEnv() {
-    document.getElementById("env").classList.add("open");
-}
-function closeEnv() {
-    document.getElementById("env").classList.remove("open");
+function toggleEnvelope() {
+    document.querySelector('.envelope-container')
+            .classList.toggle('open');
 }
 </script>
 
