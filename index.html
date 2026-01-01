@@ -7,40 +7,45 @@
 </head>
 <body>
 
-<div class="fireworks">
-  <span></span><span></span><span></span>
-</div>
+<h1 class="title">🎆 Happy New Year Papa 🎆</h1>
 
-<h1 class="title">✨ HAPPY NEW YEAR PAPA ✨</h1>
+<div class="envelope" id="env">
+    <div class="flap"></div>
 
-<div class="card">
     <div class="letter">
         <h2>Dear Papa,</h2>
 
         <p>
-            As this New Year begins, I want to thank you
-            for your endless sacrifices, guidance,
-            and love that have shaped my life.
+            As we welcome this New Year, I want to thank you
+            for your constant support, sacrifices, and guidance.
+            Your hard work and values have shaped my life
+            and taught me to always move forward with confidence.
         </p>
 
         <p>
-            You are my strength, my inspiration,
-            and my greatest teacher.
-            Your values and hard work motivate me
-            every single day.
-        </p>
-
-        <p>
-            May this New Year bring you
-            excellent health, peace,
-            happiness, and success.
-            I promise to work hard
-            and always make you proud.
+            You are my strength and my biggest inspiration.
+            May this New Year bring you good health,
+            happiness, peace, and success.
+            I promise to work hard and always make you proud.
         </p>
 
         <p class="sign">— Your Child</p>
     </div>
 </div>
+
+<div class="buttons">
+    <button onclick="openEnv()">OPEN</button>
+    <button onclick="closeEnv()">CLOSE</button>
+</div>
+
+<script>
+function openEnv() {
+    document.getElementById("env").classList.add("open");
+}
+function closeEnv() {
+    document.getElementById("env").classList.remove("open");
+}
+</script>
 
 </body>
 </html>
